@@ -1,9 +1,9 @@
 ---
 - name: Revoke User
   replace:
-    backup: True
-    regexp: "{{ item }}"
-    path: /etc/ssh/sshd_config
-    replace: "\b"
+    backup: yes
+    dest: /etc/ssh/sshd_config
+    regexp: '^(AllowUsers.*)\b{{ item }}\b(.*)$'
+    replace: '\1\2'
   with_items:
    - my_user
