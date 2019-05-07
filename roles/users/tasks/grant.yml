@@ -1,0 +1,8 @@
+---
+- name: Grant User
+  replace:
+    backup: yes
+    dest: /etc/ssh/sshd_config
+    regexp: '^(AllowUsers(?!.*\b{{ my_user }}\b).*)$'
+    replace: '\1 {{ my_user }}'
+

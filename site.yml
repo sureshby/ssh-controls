@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    - my_user: "{{ username }}"
+      my_action: "{{ user_action }}"
+
+  roles:
+    - users
