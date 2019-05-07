@@ -5,5 +5,4 @@
     dest: /etc/ssh/sshd_config
     regexp: '^(AllowUsers.*)\b{{ item }}\b(.*)$'
     replace: '\1\2'
-  with_items:
-   - my_user
+  with_items: "{{ my_user }}"
